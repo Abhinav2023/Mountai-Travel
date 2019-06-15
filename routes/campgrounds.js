@@ -3,7 +3,6 @@ var router=express.Router();
 var Campground=require("../models/campground");
 var middlewareObj=require("../middleware")
 var multer = require('multer');
-require('dotenv').config();
 
 var storage = multer.diskStorage({
   filename: function(req, file, callback) {

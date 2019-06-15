@@ -6,7 +6,6 @@ var Campground = require("../models/campground");
 var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
-require('dotenv').config();
 
 router.get("/", function(req, res){
     res.render("landing");
@@ -112,7 +111,7 @@ router.post('/forgot', function(req, res, next) {
         subject: 'Node.js Password Reset',
         text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-          'http://' + 'learnwebdev-abhinav2023.c9users.io' + '/reset/' + token + '\n\n' +
+          'http://' + 'sleepy-hollows-51902.herokuapp.com' + '/reset/' + token + '\n\n' +
           'If you did not request this, please ignore this email and your password will remain unchanged.\n'
       };
       smtpTransport.sendMail(mailOptions, function(err) {
@@ -167,7 +166,7 @@ router.post('/reset/:token', function(req, res) {
         service: 'Gmail', 
         auth: {
           user: 'abhinavbansal231101@gmail.com',
-          pass: 'yogasan@1234'
+          pass: process.env.GMAILPW
         }
       });
       var mailOptions = {
