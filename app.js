@@ -15,7 +15,8 @@ var express          = require("express"),
     flash            = require("connect-flash")
     
 //seedDB();
-mongoose.connect("mongodb://localhost/yelp_camp_final",{ useNewUrlParser: true });
+//mongoose.connect("mongodb://localhost/yelp_camp_final",{ useNewUrlParser: true });
+mongoose.connect("mongodb+srv://Abhinav:bansal@cluster0-urbmq.mongodb.net/test?retryWrites=true&w=majority",{ useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname +"/public/"));
