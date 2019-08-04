@@ -102,7 +102,7 @@ router.post('/forgot', function(req, res, next) {
         service: 'Gmail', 
         auth: {
           user: 'abhinavbansal231101@gmail.com',
-          pass: process.env.GMAILPW
+          pass: 'yogasan1234'
         }
       });
       var mailOptions = {
@@ -111,7 +111,7 @@ router.post('/forgot', function(req, res, next) {
         subject: 'Node.js Password Reset',
         text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-          'http://' + 'sleepy-hollows-51902.herokuapp.com' + '/reset/' + token + '\n\n' +
+          'https://' + 'd4987fd325294bacad7e26d45eeb99fa.vfs.cloud9.us-east-1.amazonaws.com' + '/reset/' + token + '\n\n' +
           'If you did not request this, please ignore this email and your password will remain unchanged.\n'
       };
       smtpTransport.sendMail(mailOptions, function(err) {
@@ -166,7 +166,7 @@ router.post('/reset/:token', function(req, res) {
         service: 'Gmail', 
         auth: {
           user: 'abhinavbansal231101@gmail.com',
-          pass: process.env.GMAILPW
+          pass: 'yogasan1234'
         }
       });
       var mailOptions = {
